@@ -19,4 +19,8 @@
     }
   ];
 
+  Cats.getList = function () {
+    return CatsList;
+  };
+
 })();
