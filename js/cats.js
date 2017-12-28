@@ -20,6 +20,9 @@
   ];
 
   Cats.getList = function () {
+    /**
+     * Return list of cats
+     */
     return CatsList;
   };
 
