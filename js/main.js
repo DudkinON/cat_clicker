@@ -14,6 +14,12 @@
   whiskers.counter = 0;
 
 
+  function plus(object) {
+
+    object.counter += 1;
+    object.count.innerHTML = object.counter;
+  }
+
   // create events
   fluffy.cat.addEventListener('click', function() {
     plus(fluffy);
