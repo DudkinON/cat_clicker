@@ -1,0 +1,20 @@
+.main-container {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.cat-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.counter-container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    text-shadow: 1px 1px 2px #000;
+}
+
