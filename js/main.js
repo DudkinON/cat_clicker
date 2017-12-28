@@ -30,10 +30,12 @@
 
   // create events
   fluffy.cat.addEventListener('click', function() {
+    // Click event to fluffy object
     plus(fluffy);
   }, false);
 
   whiskers.cat.addEventListener('click', function() {
+    // Click event to whiskers object
     plus(whiskers);
   }, false);
 
