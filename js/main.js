@@ -19,7 +19,11 @@
 
 
   function plus(object) {
-
+    /**
+     * Get object, increment objects counter and display result
+     * @param: object
+     * @type {number}
+     */
     object.counter += 1;
     object.count.innerHTML = object.counter;
   }
