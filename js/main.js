@@ -1,17 +1,20 @@
 (function () {
-  // define variables
-  var elem = document.getElementById('cat-container');
-  var count = document.getElementById('counter');
-  var counter = 0;
 
-  // create event
-  elem.addEventListener('click', function() {
-    /**
-     * Increment counter, and display result
-     * @type {number}
-     */
-    counter += 1;
-    count.innerHTML = counter;
+  // define variables
+  var fluffy = {};
+  var whiskers = {};
+  fluffy.cat = getElement('fluffy-container');
+  fluffy.count = getElement('counter1');
+  fluffy.counter = 0;
+  whiskers.cat = getElement('whiskers-container');
+  whiskers.count = getElement('counter2');
+  whiskers.counter = 0;
+
+
+  // create events
+  fluffy.cat.addEventListener('click', function() {
+    plus(fluffy);
   }, false);
+
 
 })();
