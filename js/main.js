@@ -1,5 +1,9 @@
 (function () {
   function getElement(ident) {
+    /**
+     * Get element by id
+     * @return: object
+     */
     return document.getElementById(ident)
   }
 
