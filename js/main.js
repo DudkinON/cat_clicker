@@ -25,5 +25,8 @@
     plus(fluffy);
   }, false);
 
+  whiskers.cat.addEventListener('click', function() {
+    plus(whiskers);
+  }, false);
 
 })();
