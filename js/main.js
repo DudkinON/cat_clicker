@@ -1,4 +1,7 @@
 (function () {
+  function getElement(ident) {
+    return document.getElementById(ident)
+  }
 
   // define variables
   var fluffy = {};
