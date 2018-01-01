@@ -1,20 +1,29 @@
 (function () {
   Cats = {};
-
   var CatsList = [
     {
-      name: 'fluffy',
+      name: 'Fluffy',
       image: '/img/cat_1.jpg',
       counter: 0
     },
     {
-      name: 'whiskers',
+      name: 'Whiskers',
       image: '/img/cat_2.jpg',
       counter: 0
     },
     {
-      name: 'sassy',
+      name: 'Sassy',
       image: '/img/cat_3.jpg',
+      counter: 0
+    },
+    {
+      name: 'Tiger',
+      image: '/img/cat_4.jpg',
+      counter: 0
+    },
+    {
+      name: 'Cassy',
+      image: '/img/cat_5.jpg',
       counter: 0
     }
   ];
