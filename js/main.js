@@ -38,6 +38,18 @@
       getById('content').innerHTML = '';
     },
 
+    // render the cat template
+    render: function (i) {
+      var cat = model.cat;
+      getById('content').innerHTML =
+        '<div class="cat-container" id="cat-container" data-cat-id="'+i+'">' +
+        '<span class="counter-container text-decor">' +
+        '<span id="counter">'+cat.counter+'</span>' +
+        '</span><img src="'+cat.image+'" width="400">' +
+        '<span class="text-bottom text-decor">Cat name: '+cat.name+'</span>' +
+        '</div>';
+    },
+
     // render a button
     showButton: function (id, name) {
       var button = doElement('button');
