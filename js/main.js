@@ -1,42 +1,95 @@
 (function () {
-  function getElement(ident) {
-    /**
-     * Get element by id
-     * @return: object
-     */
-    return document.getElementById(ident)
+
+  function doElement(elem) {
+    return document.createElement(elem);
   }
 
-  // define variables
-  var fluffy = {};
-  var whiskers = {};
-  fluffy.cat = getElement('fluffy-container');
-  fluffy.count = getElement('counter1');
-  fluffy.counter = 0;
-  whiskers.cat = getElement('whiskers-container');
-  whiskers.count = getElement('counter2');
-  whiskers.counter = 0;
-
-
-  function plus(object) {
-    /**
-     * Get object, increment objects counter and display result
-     * @param: object
-     * @type {number}
-     */
-    object.counter += 1;
-    object.count.innerHTML = object.counter;
+  function getByClass(cls) {
+    return document.getElementsByClassName(cls);
   }
 
-  // create events
-  fluffy.cat.addEventListener('click', function() {
-    // Click event to fluffy object
-    plus(fluffy);
-  }, false);
+  function getById(id) {
+    return document.getElementById(id);
+  }
 
-  whiskers.cat.addEventListener('click', function() {
-    // Click event to whiskers object
-    plus(whiskers);
-  }, false);
+  var model = {
+    // Get list of cats
+    cats: Cats.getList(),
+
+    cat: {},
+
+    getCat: function (catId) {
+      return model.cats[catId];
+    },
+
+    update: function () {
+      /**
+       * Get object, increment objects counter
+       * @param: object id
+       */
+      model.cat.counter = model.cat.counter + 1;
+    }
+  };
+
+  var view = {
+
+    //reset cat template
+    reset: function () {
+      getById('content').innerHTML = '';
+    },
+
+    // render a button
+    showButton: function (id, name) {
+      var button = doElement('button');
+      button.setAttribute("class", "btn");
+      button.setAttribute("data-cat-id", id);
+      button.innerHTML = name;
+      getById('buttons').appendChild(button);
+    }
+  };
+
+
+  var controller = {
+    init: function () {
+      var i;
+      for (i = 0; i < model.cats.length; i++) {
+        var cat = model.getCat(i);
+        view.showButton(i, cat.name);
+      }
+      var buttons = getByClass('btn');
+      for (i = 0; i < buttons.length; i++) {
+        var button = buttons[i];
+
+        button.onclick = function () {
+
+          // reset container
+          view.reset();
+
+          // current cat
+          model.cat = model.getCat(this.getAttribute('data-cat-id'));
+
+          // render the cat
+          view.render(this.getAttribute('data-cat-id'));
+
+          // create event on click
+          controller.onclick();
+        }
+      }
+    },
+
+    onclick: function () {
+      var div = getById('cat-container');
+      div.onclick = function () {
+        model.update();
+        view.reset();
+        view.render(Number(this.getAttribute('data-cat-id')));
+        controller.onclick();
+      };
+    }
+  };
+
+  // run app
+  window.onload = controller.init();
+
 
 })();
