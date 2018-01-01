@@ -1,5 +1,8 @@
-.main-container {
+.text-center {
     text-align: center;
+}
+
+.main-container {
     margin-top: 100px;
     margin-bottom: 100px;
 }
@@ -11,11 +14,34 @@
     cursor: pointer;
 }
 
-.counter-container {
-    position: absolute;
-    right: 10px;
-    top: 10px;
+.text-decor {
     color: white;
     text-shadow: 1px 1px 2px #000;
 }
 
+.counter-container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.text-bottom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    padding: 10px 15px;
+    margin: 5px 5px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background: #d5d5db;
+}
+
+.btn:hover {
+    background: #bcbcc1;
+}
