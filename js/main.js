@@ -42,11 +42,11 @@
     render: function (i) {
       var cat = model.cat;
       getById('content').innerHTML =
-        '<div class="cat-container" id="cat-container" data-cat-id="'+i+'">' +
+        '<div class="cat-container" id="cat-container" data-cat-id="' + i + '">' +
         '<span class="counter-container text-decor">' +
-        '<span id="counter">'+cat.counter+'</span>' +
-        '</span><img src="'+cat.image+'" width="400">' +
-        '<span class="text-bottom text-decor">Cat name: '+cat.name+'</span>' +
+        '<span id="counter">' + cat.counter + '</span>' +
+        '</span><img src="' + cat.image + '" width="400">' +
+        '<span class="text-bottom text-decor">Cat name: ' + cat.name + '</span>' +
         '</div>';
     },
 
@@ -57,6 +57,25 @@
       button.setAttribute("data-cat-id", id);
       button.innerHTML = name;
       getById('buttons').appendChild(button);
+    }
+  };
+
+  var formView = {
+    form: {
+      form: getById('cat-form'),
+      name: getById('form-name'),
+      image: getById('form-image'),
+      counter: getById('form-counter')
+    },
+    showForm: function () {
+      var form = formView.form;
+      form.name.setAttribute("value", model.cat.name);
+      form.image.setAttribute("value", model.cat.image);
+      form.counter.setAttribute("value", model.cat.counter);
+
+      if (form.form.getAttribute("style") === null) {
+        form.form.setAttribute("style", "display: block;")
+      }
     }
   };
 
@@ -82,6 +101,9 @@
 
           // render the cat
           view.render(this.getAttribute('data-cat-id'));
+
+          // show form
+          formView.showForm();
 
           // create event on click
           controller.onclick();
