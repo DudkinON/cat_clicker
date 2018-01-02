@@ -59,3 +59,7 @@
     border-radius: 4px;
     width: 90%;
 }
+
+.upper {
+    text-transform: uppercase;
+}
