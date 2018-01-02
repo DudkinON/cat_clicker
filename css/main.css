@@ -50,3 +50,12 @@
 .btn:hover {
     background: #bcbcc1;
 }
+
+.form-element {
+    margin: 10px;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #d0cdcd;
+    border-radius: 4px;
+    width: 90%;
+}
