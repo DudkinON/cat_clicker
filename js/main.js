@@ -28,6 +28,12 @@
        * @param: object id
        */
       model.cat.counter = model.cat.counter + 1;
+    },
+
+    update: function (form) {
+      model.cat.name = form.name;
+      model.cat.image = form.image;
+      model.cat.counter = form.counter;
     }
   };
 
