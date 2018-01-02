@@ -65,13 +65,16 @@
       form: getById('cat-form'),
       name: getById('form-name'),
       image: getById('form-image'),
-      counter: getById('form-counter')
+      counter: getById('form-counter'),
+      button: getById('form-btn')
     },
-    showForm: function () {
+
+    showForm: function (num) {
       var form = formView.form;
-      form.name.setAttribute("value", model.cat.name);
-      form.image.setAttribute("value", model.cat.image);
-      form.counter.setAttribute("value", model.cat.counter);
+      form.name.value = model.cat.name;
+      form.image.value = model.cat.image;
+      form.counter.value = model.cat.counter;
+      form.button.setAttribute("data-cat-id", num);
 
       if (form.form.getAttribute("style") === null) {
         form.form.setAttribute("style", "display: block;")
@@ -103,7 +106,7 @@
           view.render(this.getAttribute('data-cat-id'));
 
           // show form
-          formView.showForm();
+          formView.showForm(this.getAttribute('data-cat-id'));
 
           // create event on click
           controller.onclick();
