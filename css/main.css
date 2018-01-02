@@ -14,7 +14,6 @@
 
 .cat-container {
     position: relative;
-    display: inline-block;
     vertical-align: top;
     cursor: pointer;
 }
@@ -26,7 +25,7 @@
 
 .counter-container {
     position: absolute;
-    right: 10px;
+    right: 100px;
     top: 10px;
 }
 
