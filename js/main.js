@@ -127,6 +127,20 @@
         view.render(Number(this.getAttribute('data-cat-id')));
         controller.onclick();
       };
+      getById('form-btn').onclick = function () {
+        var form = {
+          name: getById('form-name').value,
+          image: getById('form-image').value,
+          counter: Number(getById('form-counter').value)
+        };
+        model.update(form);
+
+        // render the cat
+        view.render(this.getAttribute('data-cat-id'));
+
+        // show form
+        formView.showForm(this.getAttribute('data-cat-id'));
+      };
     }
   };
 
