@@ -22,7 +22,7 @@
       return model.cats[catId];
     },
 
-    update: function () {
+    upCounter: function () {
       /**
        * Get object, increment objects counter
        * @param: object id
@@ -112,9 +112,8 @@
     },
 
     onclick: function () {
-      var div = getById('cat-container');
-      div.onclick = function () {
-        model.update();
+      getById('cat-container').onclick = function () {
+        model.upCounter();
         view.reset();
         view.render(Number(this.getAttribute('data-cat-id')));
         controller.onclick();
