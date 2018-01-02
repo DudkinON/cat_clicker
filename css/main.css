@@ -2,9 +2,14 @@
     text-align: center;
 }
 
-.main-container {
+.mtb-100 {
     margin-top: 100px;
     margin-bottom: 100px;
+}
+
+.container {
+    width: 49.75%;
+    display: inline-block;
 }
 
 .cat-container {
